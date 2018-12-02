@@ -1,0 +1,11 @@
+
+.idea/
+
+dist/
+
+DioSpider.egg-info/
+
+build/
+
+DioSpider/__pycache__/*
+
