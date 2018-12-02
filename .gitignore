@@ -9,3 +9,4 @@ build/
 
 DioSpider/__pycache__/*
 
+.pytest_cache
