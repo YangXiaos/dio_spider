@@ -17,6 +17,7 @@ class BossJobSpider(LocalRegexSpider):
     def crawl(self, enterUrl, info):
         res = Downloader.getWithBs4(enterUrl)
 
+        text = res.soup.select(".detail-content .text")
         msg = Message(info=info)
         msg.updateInfo({
             "_id": TextUtil.getFirstMatch(res.text, "job_id: '(.*?)',"),
@@ -30,8 +31,8 @@ class BossJobSpider(LocalRegexSpider):
             "upDate": DateTimeUtil.getCurStandardDate(),
             "hr": res.soup.select_one("h2.name").text,
 
-            "job_description": res.soup.select(".detail-content .text")[0].text.strip(),
-            "company_introduction": res.soup.select(".detail-content .text")[1].text.strip(),
+            "job_description": text[0].text.strip(),
+            "company_introduction": res.soup.select(".detail-content .text")[1].text.strip() if len(text) >=2 else "",
         })
 
         yield msg
