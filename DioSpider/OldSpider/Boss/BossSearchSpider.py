@@ -2,7 +2,7 @@
 # @Author       : DioMryang
 # @File         : BossSearchCrawler.py
 # @Description  :
-from DioCore.Downloader.Downloader import Setting, Downloader
+from DioCore.Network.Downloader.Downloader import Setting, Downloader
 from DioFramework.Base.Message import Message
 from DioFramework.Base.Spider.LocalSpider import LocalRegexSpider
 

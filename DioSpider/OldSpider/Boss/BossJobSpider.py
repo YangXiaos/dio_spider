@@ -2,7 +2,7 @@
 # @Author       : DioMryang
 # @File         : BossContentSpider.py
 # @Description  :
-from DioCore.Downloader.Downloader import Downloader
+from DioCore.Network.Downloader.Downloader import Downloader
 from DioCore.Utils import TextUtil, DateTimeUtil
 from DioFramework.Base.Message import Message
 from DioFramework.Base.Spider.LocalSpider import LocalRegexSpider
